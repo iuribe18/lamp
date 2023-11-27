@@ -73,7 +73,7 @@ variable "EC2Names" {
 }
 
 variable "info_tags" {
-  default     = { owner = "Ivancho", stack = "Talent Pool", email = "ivan.uribe@pragma.com.co" }
+  default     = { owner = "Ivancho", stack = "Test", email = "ivanuribegonzalez@gmail.com" }
   description = "Additional resource tags"
   type        = map(string)
 }

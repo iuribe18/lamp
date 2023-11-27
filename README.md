@@ -6,6 +6,14 @@ Web Stack Implementation (Linux AWS EC2, Apache, MySQL, PHP)
 1. EC2 Instance
 2. LAMP (Linux, Apacha, MySQL, PHP)
 
+Step 0 - Preparing prerequisites
+1. AWS account setup and Provisioning an Ubuntu Server
+2. Key Pair
+3. Connecting to your Ec2 Instance
+
+Step 1 - Installing apache and Updating the Firewall
+1. Install Apache
+
 ## Installation
 Install Apache, mysql, PHP
 
