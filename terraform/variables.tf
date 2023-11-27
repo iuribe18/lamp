@@ -1,3 +1,8 @@
+variable "region" {
+  type = string
+  default = "us-east-1" # Northern Virginia
+}
+
 variable "vpc_cidr" {
   type        = string
   description = "vpc_cidr"
@@ -19,7 +24,8 @@ variable "network_cidr" {
 variable "az" {
   type        = list(string)
   description = "AWS Availability Zones"
-  default = ["us-west-2a", "us-west-2b"]
+  default = ["us-east-1a", "us-east-1b"] # us-east-1
+  #default = ["us-west-2a", "us-west-2b"] # us-east-2
 }
 
 variable "network_name" {
@@ -56,7 +62,8 @@ variable "ami" {
   type        = string
   description = "Type of AMI"
   #default = "ami-017fecd1353bcc96e" # AMI Ubuntu
-  default = "ami-0c65adc9a5c1b5d7c" # AMI Ubuntu 20.04, Oregon
+  #default = "ami-0c65adc9a5c1b5d7c" # AMI Ubuntu 20.04, Oregon
+  default = "ami-06aa3f7caf3a30282" # AMI Ubuntu 20.04, Northern Virginia
   #default = "ami-06e85d4c3149db26a" # AMI Amazon Linux
 }
 
