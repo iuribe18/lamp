@@ -20,7 +20,6 @@ resource "aws_instance" "app_server" {
   #count = 2
   #depends_on = [aws_instance.app_server1]
   user_data = file("lamp.sh")
-  #user_data = "${file("lamp.sh")}"
 
   # En el tag nombre se usa el index para asignar a cada instancia un valor [1 ,2]  
   tags = merge(

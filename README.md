@@ -14,6 +14,9 @@ Step 0 - Preparing prerequisites
 Step 1 - Installing apache and Updating the Firewall
 1. Install Apache
 
+Step 2 - Installing MySQL and Updating the Firewall
+1. Install Apache
+
 ## Installation
 Install Apache, mysql, PHP
 

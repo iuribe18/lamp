@@ -10,7 +10,7 @@ resource "aws_route_table" "rt_public" {
 
   tags = merge(
     var.info_tags, {
-      Name = var.RouteTable[0]
+      Name = var.route_table[0]
       # RT_Public
   })
 }

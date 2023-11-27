@@ -40,10 +40,10 @@ variable "network_name" {
   default = ["Subnet_Private1", "Subnet_Private2"]
 }*/
 
-variable "RouteTable" {
+variable "route_table" {
   type        = list(string)
   description = "Names of Route Table"
-  default = ["RT_Public", "RT_Private"]
+  default = ["rt_public", "rt_private"]
 }
 
 variable "sg_ports" {
@@ -52,10 +52,10 @@ variable "sg_ports" {
   default = [22, 80]
 }
 
-variable "SecGroup" {
+variable "sec_group" {
   type        = list(string)
   description = "Names od the Security Groups"
-  default = ["SecGroup_Public", "SecGroup_Private"]
+  default = ["sec_group_public", "sec_group_private"]
 }
 
 variable "ami" {
@@ -76,7 +76,7 @@ variable "instance_type" {
 variable "EC2Names" {
   type        = list(string)
   description = "EC2 Instance Names"
-  default = ["EC2_Public1", "EC2_Public2"]
+  default = ["EC2_public", "EC2_Public2"]
 }
 
 variable "info_tags" {

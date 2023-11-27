@@ -18,7 +18,7 @@ resource "aws_internet_gateway" "gw_uribe" {
 
   tags = merge(
     var.info_tags, {
-      Name = "internet_gateway_uribe"
+      Name = "ig_uribe"
     }
   )
 }
