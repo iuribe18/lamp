@@ -29,3 +29,57 @@ sudo systemctl restart mysql
 
 # PHP
 sudo apt -y install php libapache2-mod-php php-mysql
+
+## Creating a Virtual Host for your Website Using Apache
+# Create the directory
+sudo mkdir /var/www/lamp
+# Asign ownership of the directory with ypur current system user
+sudo chown -R $USER:$USER /var/www/lamp
+# Create a configuration file in Apache's aites-available directory 
+nano /etc/apache2/sites-available/lamp.conf
+
+<VirtualHost *:80>
+    ServerName lamp
+    ServerAlias www.lamp
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/lamp
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+# Enable virtual Host
+sudo a2ensite lamp
+# Output: 
+#Enabling site lamp.
+#To activate the new configuration, you need to run:
+#  systemctl reload apache2
+
+# Disable default website
+sudo a2dissite 000-default
+# Output: 
+#Enabling site lamp.
+#To activate the new configuration, you need to run:
+#  systemctl reload apache2
+
+# Make sure your config file doesn't contain syntax errors
+sudo apache2ctl configtest
+# Output: Syntax OK
+
+# Reboot Apache
+sudo systemctl reload apache2
+
+# Website is now active, but the web root /var/www/lamp/ is still empty.
+# Create an index.html file in that location so that we can test that the virtual host works as expected
+sudo echo 'Hello from Hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with Public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/lamp/index.html
+
+# Enable PHP
+sudo vi sudo vi /etc/apache2/mods-enabled/dir.conf
+
+# Reboot Apache
+sudo systemctl reload apache2
+
+# Create a new file index.php
+vi /var/www/lamp/index.php
+
+<?php
+phpinfo();

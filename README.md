@@ -15,7 +15,12 @@ Step 1 - Installing apache and Updating the Firewall
 1. Install Apache
 
 Step 2 - Installing MySQL and Updating the Firewall
-1. Install Apache
+1. Install MySQL
+2. Secure Instalation
+
+Step 3 - Creating a Virtual Host for your Website Using Apache
+1. Install MySQL
+2. Secure Instalation
 
 ## Installation
 Install Apache, mysql, PHP
